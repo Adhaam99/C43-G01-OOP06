@@ -30,7 +30,7 @@
             //    if (str == "")
             //    {
             //        flag02 = false;
-                    
+
             //    }
             //    else
             //    {
@@ -130,7 +130,7 @@
             // */
 
             //Point[] points = { P1, P2 , new Point(4 , 5 , 6) };
-            
+
             //for (int i = 0; i < points.Length; i++)
             //{
             //    for (int j = i +1 ;  j < points.Length; j++)
@@ -139,7 +139,7 @@
             //            (points[i] , points[j]) = (points[j] , points[i]);
             //    }
             //}
-            
+
             //for (int i = 0; i < points.Length;i++)
             //{
             //    Console.WriteLine($"Point Num {i + 1} : {points[i]}");
@@ -150,7 +150,7 @@
              */
 
             //Point point01 = new Point(12, 14, 16);
-            //Point point02 = new Point() { X = 10 , Y = 20 , Z = 30};
+            //Point point02 = new Point() { X = 10, Y = 20, Z = 30 };
 
             //Console.WriteLine("Before Clone");
 
@@ -159,7 +159,7 @@
             //Console.WriteLine($"point01 : {point01.GetHashCode()}");
             //Console.WriteLine($"point02 : {point02.GetHashCode()}");
 
-            //point02 = point01;
+            //point02 = (Point) point01.Clone();
 
             //Console.WriteLine("After Clone");
 
@@ -168,6 +168,26 @@
             //Console.WriteLine($"point01 : {point01.GetHashCode()}");
             //Console.WriteLine($"point02 : {point02.GetHashCode()}");
 
+            #endregion
+
+            #region Second Peoject
+
+
+            double sum = Maths.Add(1 , 2);
+
+            Console.WriteLine(sum);
+
+            double sub = Maths.Subtract(1, 2);
+
+            Console.WriteLine(sub);
+
+            double Mul = Maths.Multiply(1, 2);
+
+            Console.WriteLine(Mul);
+
+            double div = Maths.Divide(1, 2);
+
+            Console.WriteLine(div);
 
             #endregion
         }

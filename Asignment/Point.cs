@@ -29,6 +29,10 @@ namespace Asignment
             Z = z;
         }
 
+        public Point()
+        {
+        }
+
         #endregion
 
         #region Methods
