@@ -173,21 +173,68 @@
             #region Second Peoject
 
 
-            double sum = Maths.Add(1 , 2);
+            //double sum = Maths.Add(1 , 2);
 
-            Console.WriteLine(sum);
+            //Console.WriteLine(sum);
 
-            double sub = Maths.Subtract(1, 2);
+            //double sub = Maths.Subtract(1, 2);
 
-            Console.WriteLine(sub);
+            //Console.WriteLine(sub);
 
-            double Mul = Maths.Multiply(1, 2);
+            //double Mul = Maths.Multiply(1, 2);
 
-            Console.WriteLine(Mul);
+            //Console.WriteLine(Mul);
 
-            double div = Maths.Divide(1, 2);
+            //double div = Maths.Divide(1, 2);
 
-            Console.WriteLine(div);
+            //Console.WriteLine(div);
+
+            #endregion
+
+            #region Third Project
+
+            Console.Write("Enter user type : ");
+
+            string userType = Console.ReadLine() ?? "";
+
+            User user = userType.ToLower() switch
+            {
+                "regular" => new RegularUser("Regular User"),
+                "premium" => new PremiumUser("Premium User"),
+                _ => new GuestUser("Guest User")
+            };
+
+            decimal price;
+
+            int quantity;
+
+            bool flag01, flag02;
+
+            do
+            {
+
+                Console.Write("Enter price : ");
+
+                flag01 = decimal.TryParse(Console.ReadLine(), out price);
+
+                Console.Write("Enter quantity : ");
+
+                flag02 = int.TryParse(Console.ReadLine(), out quantity);
+
+            } while (!flag01 && !flag02);
+
+
+            Discount discount = user.GetDiscount();
+
+            decimal totalAmount = discount?.CalculateDiscount(price, quantity) ?? 0;
+
+            decimal finalPrice = (price * quantity) - totalAmount;
+
+            Console.WriteLine($"Total Discount : {totalAmount}");
+
+            Console.WriteLine($"Final Price : {finalPrice}");
+
+
 
             #endregion
         }
